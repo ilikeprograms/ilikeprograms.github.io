@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://ilikeprograms.github.io/sitemap.xml 
