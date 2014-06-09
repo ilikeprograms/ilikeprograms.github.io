@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[ilikeprograms Blog]]></title>
-  <link href="http://ilikeprograms.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Javascript | ilikeprograms Blog]]></title>
+  <link href="http://ilikeprograms.github.io/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://ilikeprograms.github.io/"/>
   <updated>2014-06-09T11:09:03+01:00</updated>
   <id>http://ilikeprograms.github.io/</id>
@@ -31,13 +31,13 @@
 
 <p>So if he was to store this in Javascript, he might have something like this:</p>
 
-<div><script src='https://gist.github.com/d0c85ccd4c02b9b8bc68.js?file=object_to_array_animals.js'></script>
+<p><div><script src='https://gist.github.com/d0c85ccd4c02b9b8bc68.js?file=object_to_array_animals.js'></script>
 <noscript><pre><code>var animals = {
-    &quot;dogs&quot;: [&quot;Husky&quot;, &quot;German Sheppard&quot;],
-    &quot;lizards&quot;: [&quot;Comodo Dragon&quot;, &quot;Gozzzilla&quot;]
+	&quot;dogs&quot;: [&quot;Husky&quot;, &quot;German Sheppard&quot;],
+	&quot;lizards&quot;: [&quot;Comodo Dragon&quot;, &quot;Gozzzilla&quot;]
 };
 </code></pre></noscript></div>
-
+</p>
 
 <p>Which is great, he knows what types of animals he has, and what breeds.</p>
 
@@ -47,10 +47,10 @@
 
 <h2>Method one &ndash; For loops</h2>
 
-<div><script src='https://gist.github.com/d0c85ccd4c02b9b8bc68.js?file=object_to_array_animals_first.js'></script>
+<p><div><script src='https://gist.github.com/d0c85ccd4c02b9b8bc68.js?file=object_to_array_animals_first.js'></script>
 <noscript><pre><code>var animals = {
-    &quot;dogs&quot;: [&quot;Husky&quot;, &quot;German Sheppard&quot;],
-    &quot;lizards&quot;: [&quot;Comodo Dragon&quot;, &quot;Gozzzilla&quot;]
+	&quot;dogs&quot;: [&quot;Husky&quot;, &quot;German Sheppard&quot;],
+	&quot;lizards&quot;: [&quot;Comodo Dragon&quot;, &quot;Gozzzilla&quot;]
 };
 
 var animalBreeds = [];
@@ -63,7 +63,7 @@ for (var i = 0, len = animals.length; i &lt; len; i++) {
 }
 
 console.log(animalBreeds);</code></pre></noscript></div>
-
+</p>
 
 <p>As you can see, this is quite a bit of code, to do something simple. It required you to have two for loops with seperate counters in each, then to manually push the breeds into the array.</p>
 
@@ -73,20 +73,20 @@ console.log(animalBreeds);</code></pre></noscript></div>
 
 <p>The second method uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys">Object#keys</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">Array#forEach</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">Array#concat</a> which make the code a bit more natural and less error prone.</p>
 
-<div><script src='https://gist.github.com/d0c85ccd4c02b9b8bc68.js?file=object_to_array_animals_second.js'></script>
+<p><div><script src='https://gist.github.com/d0c85ccd4c02b9b8bc68.js?file=object_to_array_animals_second.js'></script>
 <noscript><pre><code>var animals = {
-    &quot;dogs&quot;: [&quot;Husky&quot;, &quot;German Sheppard&quot;],
-    &quot;lizards&quot;: [&quot;Comodo Dragon&quot;, &quot;Gozzzilla&quot;]
+	&quot;dogs&quot;: [&quot;Husky&quot;, &quot;German Sheppard&quot;],
+	&quot;lizards&quot;: [&quot;Comodo Dragon&quot;, &quot;Gozzzilla&quot;]
 };
 
 var animalBreeds = [];
 
 Object.keys(animals).forEach(function (animalType) {
-    animalBreeds = animalBreeds.concat(animals[animalType]);
+	animalBreeds = animalBreeds.concat(animals[animalType]);
 });
 
 console.log(animalBreeds);</code></pre></noscript></div>
-
+</p>
 
 <p><code>Object.keys()</code> will get the different keys of an Object and turn it into an array.<br/>
 Then with this array we can use <code>Array.forEach()</code> to itterate over the keys, so inside the forEach, <code>animalType</code> is a reference to the <code>animals</code> keys (dogs, lizards).</p>
@@ -98,11 +98,11 @@ Then with this array we can use <code>Array.forEach()</code> to itterate over th
 
 <p>As a Bonus snippet, its also really easy to be able to turn the <code>animals</code> into multidmentional array which contains the breeds.</p>
 
-<div><script src='https://gist.github.com/d0c85ccd4c02b9b8bc68.js?file=object_to_array_animals_bonus.js'></script>
+<p><div><script src='https://gist.github.com/d0c85ccd4c02b9b8bc68.js?file=object_to_array_animals_bonus.js'></script>
 <noscript><pre><code>Object.keys(animals).map(function (animalBreeds) {
-    return animals[animalBreeds];
+	return animals[animalBreeds];
 });</code></pre></noscript></div>
-
+</p>
 
 <p>This effectively removes the <code>keys</code> (they are actually there 0..1 etc) from Object, and turns it into an array instead. Which then can be itterated easier. Depending on how you want the data structured, this could be a better data structure.</p>
 

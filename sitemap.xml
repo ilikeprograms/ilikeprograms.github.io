@@ -1,12 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>
+            http://ilikeprograms.github.io/blog/2014/06/03/object-with-keys-to-plain-array-in-javascript/
+        </loc>
+        <lastmod>2014-06-09T11:08:56+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://ilikeprograms.github.io/blog/archives/</loc>
-        <lastmod>2014-06-03T14:38:11+01:00</lastmod>
+        <lastmod>2014-06-09T11:08:56+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilikeprograms.github.io/</loc>
-        <lastmod>2014-06-03T14:38:11+01:00</lastmod>
+        <lastmod>2014-06-09T11:08:56+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilikeprograms.github.io/robots.txt</loc>
